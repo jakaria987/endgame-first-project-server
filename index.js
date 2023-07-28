@@ -46,10 +46,10 @@ async function run() {
         res.send(result);
     })
 
-    app.get('/admission', async(req, res) => {
+    app.get('/admission', async (req, res) => {
         let query = {};
-        if(req.query?.email){
-            query = {email: req.query.email}
+        if (req.query?.CandidateEmail){
+            query = { email: req.query.CandidateEmail } 
         }
         const result = await admissionCollection.find(query).toArray();
         res.send(result);
